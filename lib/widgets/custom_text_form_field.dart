@@ -21,26 +21,23 @@ class CustomTextFormField extends StatefulWidget {
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 5.0),
-      child: Form(
-        key: widget.formkey,
-        child: TextFormField(
-          keyboardType:
-              widget.isNumber! ? TextInputType.number : TextInputType.text,
-          decoration: InputDecoration(
-            label: Text(widget.label),
-            hintText: widget.hint,
-          ),
-          controller: widget.controller,
-          validator: (value) {
-            if (value!.isEmpty) {
-              return "Cannot be Empty";
-            } else {
-              null;
-            }
-          },
+    return Form(
+      key: widget.formkey,
+      child: TextFormField(
+        keyboardType:
+            widget.isNumber! ? TextInputType.number : TextInputType.text,
+        decoration: InputDecoration(
+          label: Text(widget.label),
+          hintText: widget.hint,
         ),
+        controller: widget.controller,
+        validator: (value) {
+          if (value!.isEmpty) {
+            return "Cannot be Empty";
+          } else {
+            null;
+          }
+        },
       ),
     );
   }
