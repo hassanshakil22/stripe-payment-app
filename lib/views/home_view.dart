@@ -117,7 +117,7 @@ class _HomeViewState extends State<HomeView> {
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        Text(
+                        const Text(
                           "Palestenian Kids Need Your Support",
                           style: TextStyle(
                               fontSize: 30, fontWeight: FontWeight.bold),
@@ -135,11 +135,11 @@ class _HomeViewState extends State<HomeView> {
                                 controller: amountController,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
                             DropdownMenu<String>(
-                              inputDecorationTheme: InputDecorationTheme(
+                              inputDecorationTheme: const InputDecorationTheme(
                                   border: UnderlineInputBorder(),
                                   contentPadding:
                                       EdgeInsets.symmetric(horizontal: 20)),
@@ -210,7 +210,7 @@ class _HomeViewState extends State<HomeView> {
                                     controller: pincodeController))
                           ],
                         ), //country row
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         SizedBox(
@@ -254,8 +254,8 @@ class _HomeViewState extends State<HomeView> {
     try {
       await Stripe.instance.presentPaymentSheet();
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: const Text(
+        const SnackBar(
+          content: Text(
             "Payment Succesfull",
           ),
           backgroundColor: Colors.green,
@@ -272,8 +272,8 @@ class _HomeViewState extends State<HomeView> {
       print('Error: $e');
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: const Text(
+        const SnackBar(
+          content: Text(
             "Payment Failed",
           ),
           backgroundColor: Colors.red,
